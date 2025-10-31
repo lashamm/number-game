@@ -11,6 +11,5 @@ if (startGame == 'S')
 {
     Game.GameStart();
 }
-
 #endregion
 
