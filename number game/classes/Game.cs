@@ -20,7 +20,7 @@ namespace number_game.classes
                 Console.Clear();
                 if(difficulty != 'E' && difficulty != 'M' && difficulty != 'H')
                 {
-                    Console.WriteLine("Invalid input please choose E, M or H");
+                    Console.WriteLine("Invalid input please choose Easy, Medium or Hard");
                     continue;
                 }
                 else if (difficulty == 'E')
