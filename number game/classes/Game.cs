@@ -14,6 +14,7 @@ namespace number_game.classes
             Console.WriteLine("1. Press E for Easy (1-10)" +
                 "\n2. Press M for Medium (1-20)" +
                 "\n3. Press H Hard (1-50)");
+            int life = 5;
             while (true)
             {
                 char difficulty = Char.ToUpper(Console.ReadKey().KeyChar);
@@ -28,7 +29,9 @@ namespace number_game.classes
                     Random rand = new Random();
                     int numberToGuess = rand.Next(1, 11);
                     Console.WriteLine("You have chosen Easy difficulty." +
-                        "Guess a number between 1 and 10.");
+                        "\nGuess a number between 1 and 10." +
+                        $"\nYou have {life} lives every failed attemps lead to a life loss" +
+                        "\nif you ran out of lives you will automaticly loose!");
                     int userGuess = Int32.Parse(Console.ReadLine());
                     Console.Clear();
                     while (true)
@@ -41,20 +44,38 @@ namespace number_game.classes
                         }
                         else if (userGuess < numberToGuess)
                         {
-                            Console.WriteLine("try higher");
+                            life--;
+                            if (life == 0)
+                            {
+                                Console.WriteLine("You have run out of lives! You lose!" +
+                                    "\nTry again and choose difficulty E, M or H");
+                                life += 5;
+                                break;
+                            }
+                            Console.WriteLine($"you have {life} lives left! Try higher");
                             userGuess = Int32.Parse(Console.ReadLine());
                             Console.Clear();
+                            
                         }
                         else if (userGuess > numberToGuess)
                         {
-                            Console.WriteLine("try lower");
+                            life--;
+                            if (life == 0)
+                            {
+                                Console.WriteLine("You have run out of lives! You lose!" +
+                                    "\nTry again and choose difficulty E, M or H");
+                                life += 5;
+                                break;
+                            }
+                            Console.WriteLine($"you have {life} lives left! Try lower");
                             userGuess = Int32.Parse(Console.ReadLine());
                             Console.Clear();
+
                         }
                         else if (userGuess == numberToGuess)
                         {
                             Console.WriteLine("Congrats You guessed the right number");
-                            break;
+                            return;
                         }
                         else
                         {
@@ -68,7 +89,9 @@ namespace number_game.classes
                     Random rand = new Random();
                     int numberToGuess = rand.Next(1, 21);
                     Console.WriteLine("You have chosen Medium difficulty." +
-                        "Guess a number between 1 and 20.");
+                        "Guess a number between 1 and 20." +
+                        "\nYou have 5 lives every failed attemps lead to a life loss" +
+                        "\nif you ran out of lives you will automaticly loose!");
                     int userGuess = Int32.Parse(Console.ReadLine());
                     Console.Clear();
                     while (true)
@@ -81,20 +104,36 @@ namespace number_game.classes
                         }
                         else if (userGuess < numberToGuess)
                         {
-                            Console.WriteLine("try higher");
+                            life--;
+                            if (life == 0)
+                            {
+                                Console.WriteLine("You have run out of lives! You lose!" +
+                                    "\nTry again and choose difficulty E, M or H");
+                                life += 5;
+                                break;
+                            }
+                            Console.WriteLine($"you have {life} lives left! Try higher");
                             userGuess = Int32.Parse(Console.ReadLine());
                             Console.Clear();
                         }
                         else if (userGuess > numberToGuess)
                         {
-                            Console.WriteLine("try lower");
+                            life--;
+                            if (life == 0)
+                            {
+                                Console.WriteLine("You have run out of lives! You lose!" +
+                                    "\nTry again and choose difficulty E, M or H");
+                                life += 5;
+                                break;
+                            }
+                            Console.WriteLine($"you have {life} lives left! try lower");
                             userGuess = Int32.Parse(Console.ReadLine());
                             Console.Clear();
                         }
                         else if (userGuess == numberToGuess)
                         {
                             Console.WriteLine("Congrats You guessed the right number");
-                            break;
+                            return;
                         }
                         else
                         {
@@ -108,7 +147,8 @@ namespace number_game.classes
                     Random rand = new Random();
                     int numberToGuess = rand.Next(1, 51);
                     Console.WriteLine("You have chosen Hard difficulty." +
-                        "Guess a number between 1 and 50.");
+                        "Guess a number between 1 and 50." +
+                        "You have 5 lives every failed attemps lead to a life loss");
                     int userGuess = Int32.Parse(Console.ReadLine());
                     Console.Clear();
                     while (true)
@@ -121,20 +161,36 @@ namespace number_game.classes
                         }
                         if (userGuess < numberToGuess)
                         {
-                            Console.WriteLine("try higher");
+                            life--;
+                            if (life == 0)
+                            {
+                                Console.WriteLine("You have run out of lives! You lose!" +
+                                    "\nTry again and choose difficulty E, M or H");
+                                life += 5;
+                                break;
+                            }
+                            Console.WriteLine($"you have {life} lives left! Try higher");
                             userGuess = Int32.Parse(Console.ReadLine());
                             Console.Clear();
                         }
                         else if (userGuess > numberToGuess)
                         {
-                            Console.WriteLine("try lower");
+                            life--;
+                            if (life == 0)
+                            {
+                                Console.WriteLine("You have run out of lives! You lose!" +
+                                    "\nTry again and choose difficulty E, M or H");
+                                life += 5;
+                                break;
+                            }
+                            Console.WriteLine($"you have {life} lives left! try lower");
                             userGuess = Int32.Parse(Console.ReadLine());
                             Console.Clear();
                         }
                         else if (userGuess == numberToGuess)
                         {
                             Console.WriteLine("Congrats You guessed the right number");
-                            break;
+                            return;
                         }
                         else
                         {
