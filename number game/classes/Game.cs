@@ -74,7 +74,13 @@ namespace number_game.classes
                         }
                         else if (userGuess == numberToGuess)
                         {
-                            Console.WriteLine("Congrats You guessed the right number");
+                            Console.WriteLine("Congrats You guessed the right number!" +
+                                "\nIf you want to play again ");
+                            if (life < 5)
+                            {
+                                life = 5;
+                            }
+                            
                             return;
                         }
                         else
@@ -132,7 +138,13 @@ namespace number_game.classes
                         }
                         else if (userGuess == numberToGuess)
                         {
-                            Console.WriteLine("Congrats You guessed the right number");
+                            Console.WriteLine("Congrats You guessed the right number!" +
+                                "\nIf you want to play again");
+                            if (life < 5)
+                            {
+                                life = 5;
+                            }
+                            
                             return;
                         }
                         else
@@ -147,7 +159,7 @@ namespace number_game.classes
                     Random rand = new Random();
                     int numberToGuess = rand.Next(1, 51);
                     Console.WriteLine("You have chosen Hard difficulty." +
-                        "Guess a number between 1 and 50." +
+                        "\nGuess a number between 1 and 50." +
                         "You have 5 lives every failed attemps lead to a life loss");
                     int userGuess = Int32.Parse(Console.ReadLine());
                     Console.Clear();
@@ -189,7 +201,13 @@ namespace number_game.classes
                         }
                         else if (userGuess == numberToGuess)
                         {
-                            Console.WriteLine("Congrats You guessed the right number");
+                            Console.WriteLine("Congrats You guessed the right number!" +
+                                "\nIf you want to play again");
+                            if (life < 5)
+                            {
+                                life = 5;
+                            }
+
                             return;
                         }
                         else

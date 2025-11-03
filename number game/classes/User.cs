@@ -11,24 +11,29 @@ namespace number_game.classes
     internal class User
     {
         public string Username { get; set; }
-        public string Password { get; set; }
+        public int Verif { get; set; }
 
-        public static User Create(string username, string password)
+        public static User Create(string username, int verif)
         {
-            return new User { Username = username, Password = password };
+            return new User { Username = username, Verif = verif };
         }
 
-        public static User checkPass(string a, string b)
+        public static User checkVerif(int a, int b)
         {
-            if (a == b)
+            while (true)
             {
-                Console.WriteLine("Password confirmed.");
-                return new User();
-            }
-            else
-            {
-                Console.WriteLine("Passwords do not match.");
-                return null;
+                if (a == b)
+                {
+                    Console.WriteLine("Verification passed!");
+                    return new User();
+                }
+                else
+                {
+                    Console.WriteLine("Verification failed! Try again.");
+                    Console.Write($"Enter verification code: ");
+                    a = Int32.Parse(Console.ReadLine());
+                    Console.Clear();
+                }
             }
         }
     }

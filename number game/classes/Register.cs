@@ -11,24 +11,25 @@ namespace number_game.classes
     {
         public static void Start()
         {
+            Random random = new Random();
+            int verificationCode = random.Next(1000, 9999);
             Console.WriteLine("Welcome to the Number Guessing Game!");
             Console.Write("Please enter your username: ");
             string username = Console.ReadLine();
             Console.Clear();
-            Console.Write("Please enter your password: ");
-            string password = Console.ReadLine();
-            User user = User.Create(username, password);
-            Console.Write("Please confirm your password: ");
-            string confirmPassword = Console.ReadLine();
+            Console.Write($"Verification code: {verificationCode}" +
+                "\nPlease enter the given verification code: ");
+            int UserVerif = Int32.Parse(Console.ReadLine());
+            User user = User.Create(username, UserVerif);
             Console.Clear();
-            if (User.checkPass(password, confirmPassword) != null)
+            if (User.checkVerif(UserVerif, verificationCode) != null)
             {
                 Console.WriteLine($"User {user.Username} successfully created. " +
                     $"\npress S to start the game");
             }
             else
             {
-                Console.WriteLine("User creation failed due to password mismatch.");
+                Console.WriteLine("User creation failed due to failed verification.");
             }
         }
     }

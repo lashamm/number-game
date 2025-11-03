@@ -7,9 +7,19 @@ Register.Start();
 #region start game
 char startGame = Char.ToUpper(Console.ReadKey().KeyChar);
 Console.Clear();
-if (startGame == 'S')
+while (true)
 {
-    Game.GameStart();
+    if (startGame == 'S')
+    { 
+        Game.GameStart();
+    }
+    else
+    {
+    Console.WriteLine("Invalid input! " +
+        "\nPlease press 'S' on your keyboard");
+    startGame = Char.ToUpper(Console.ReadKey().KeyChar);
+        Console.Clear();
+    }
 }
 #endregion
 
