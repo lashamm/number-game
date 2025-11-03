@@ -7,7 +7,7 @@ using number_game.classes;
 
 namespace number_game.classes
 {
-    internal class Register
+    internal class UserCreate
     {
         public static void Start()
         {
