@@ -6,6 +6,7 @@ UserCreate.Start();
 
 char startGame = Char.ToUpper(Console.ReadKey().KeyChar);
 Console.Clear();
+
 while (true)
 {
     if (startGame == 'S')

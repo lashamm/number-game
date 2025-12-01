@@ -9,6 +9,9 @@ namespace number_game.classes
 {
     internal class UserCreate
     {
+        /// <summary>
+        /// Method that starts user creation process
+        /// </summary>
         public static void Start()
         {
             Random random = new Random();

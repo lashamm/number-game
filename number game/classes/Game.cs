@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace number_game.classes
 {
+    /// <summary>
+    /// Game class
+    /// </summary>
     internal class Game
     {
+        /// <summary>
+        /// method: GameStart
+        /// </summary>
         public static void GameStart()
         {
             Console.WriteLine("Please choose difficulty");
