@@ -7,6 +7,9 @@ using number_game.classes;
 
 namespace number_game.classes
 {
+    /// <summary>
+    /// class that handles user creation
+    /// </summary>
     internal class UserCreate
     {
         /// <summary>
